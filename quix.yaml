@@ -8,8 +8,8 @@ metadata:
 deployments:
   - name: trade_producer
     application: trade_producer
-    deploymentType: Service
     version: 6a2973a1ca622f1d33e6586cb017a72ea89840a0
+    deploymentType: Service
     resources:
       cpu: 200
       memory: 500
@@ -23,8 +23,8 @@ deployments:
         value: trades_topic
   - name: trade_to_ohlc
     application: trade_to_ohlc
-    deploymentType: Service
     version: 684b3d2affc25f6c03ba283b495b1279d66e244b
+    deploymentType: Service
     resources:
       cpu: 200
       memory: 500
@@ -43,8 +43,8 @@ deployments:
         value: ohlc_topic
   - name: streamlit-app
     application: dashboard
-    deploymentType: Service
     version: 0d6ec8dced8122de9de0e0343a9b6e0c8040301b
+    deploymentType: Service
     resources:
       cpu: 200
       memory: 500
@@ -66,8 +66,8 @@ deployments:
         secretKey: HOPSWORKS_API_KEY
   - name: ohlc_to_feature_store
     application: ohlc_to_feature_store
-    deploymentType: Service
     version: 3cddf7189c498a45e1343be3f0c9ed5b02484f4c
+    deploymentType: Service
     resources:
       cpu: 200
       memory: 500
@@ -97,20 +97,20 @@ topics:
     configuration:
       partitions: 1
       replicationFactor: 2
-      retentionInMinutes: 1440
-      retentionInBytes: 52428800
+      retentionInMinutes: -1
+      retentionInBytes: -1
   - name: changelog__qts__trade_to_ohlc_consumer_group--trades_topic--tumbling_window_10000_reduce
     persisted: false
     configuration:
       partitions: 1
       replicationFactor: 2
-      retentionInMinutes: 1440
-      retentionInBytes: 52428800
+      retentionInMinutes: -1
+      retentionInBytes: -1
       cleanupPolicy: Compact
   - name: trades_topic
     persisted: false
     configuration:
       partitions: 1
       replicationFactor: 2
-      retentionInMinutes: 1440
-      retentionInBytes: 52428800
+      retentionInMinutes: -1
+      retentionInBytes: -1
