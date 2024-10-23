@@ -3,19 +3,16 @@ language: python
 variables:
   - name: input
     inputType: InputTopic
-    description: This is the input topic to read data from
     defaultValue: ohlc_topic
-    required: true
+    required: false
   - name: HOPSWORKS_PROJECT_NAME
     inputType: Secret
-    description: ''
-    defaultValue: HOPSWORKS_PROJECT_NAME
-    required: true
+    defaultValue: HOPSWORKS_PROJECT_NAME_key
+    required: false
   - name: HOPSWORKS_API_KEY
     inputType: Secret
-    description: ''
-    defaultValue: HOPSWORKS_API_KEY
-    required: true
+    defaultValue: HOPSWORKS_API_KEY_key
+    required: false
 dockerfile: Dockerfile
 runEntryPoint: main.py
 defaultFile: main.py
