@@ -189,3 +189,7 @@ trust_policy.json
 
 .TODOS
 ca.cert
+compose.local.yaml
+.secrets
+.venv/
+certificates/
